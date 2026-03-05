@@ -183,12 +183,12 @@ h1{
   width: 72px;
   height: 72px;
   border-radius: 18px;
-  background:
-    radial-gradient(40px 40px at 20% 30%, rgba(255,255,255,.22), transparent 60%),
-    linear-gradient(135deg, rgba(110,168,255,.65), rgba(124,92,255,.55));
+  object-fit: cover;
   border: 1px solid rgba(255,255,255,.10);
   margin-bottom: 10px;
+  display: block;
 }
+
 
 .profile-card h2{
   margin: 0 0 4px;
