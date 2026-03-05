@@ -1,88 +1,216 @@
 <!doctype html>
 <html lang="tr">
-  <head>
-    <!-- UTF-8 önerilir (metin/karakter bozulmalarını önler) -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>YMH354 - CSS ile Tasarım Örneği</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Furkan | Portfolio</title>
+  <meta name="description" content="Furkan - Software Engineering Student | Portfolio" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- External CSS (en önerilen yöntem) -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <a class="skip-link" href="#content">İçeriğe atla</a>
-
-    <header class="site-header">
-      <div class="container header-inner">
-        <h1 class="brand">Furkan Canım</h1>
-        <p class="tagline">Yazılım Mühendisliği Öğrencisi</p>
-      </div>
-    </header>
-
-    <nav class="site-nav" aria-label="Ana menü">
-      <div class="container">
-        <ul class="nav-list">
-          <li><a href="#selectors">Selectors</a></li>
-          <li><a href="#layout">Layout</a></li>
-          <li><a href="#boxmodel">Box Model</a></li>
-          <li><a href="#responsive">Responsive</a></li>
-        </ul>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="logo" href="#top">Furkan</a>
+      <div class="nav-links">
+        <a href="#projects">Projeler</a>
+        <a href="#skills">Yetenekler</a>
+        <a href="#about">Hakkımda</a>
+        <a class="btn" href="#contact">İletişim</a>
       </div>
     </nav>
 
-    <main class="container layout" id="content">
-      <article class="card" id="selectors">
-        <h2>1) Selectors + Pseudo-class</h2>
-        <p>
-          Bu paragraf normal akışta. <span class="badge">.class</span> ve
-          <span id="special">#id</span> örneği içeriyor.
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <p class="pill">Software Engineering Student • React • Spring Boot</p>
+        <h1>
+          Merhaba, ben <span class="accent">Furkan</span> 👋<br />
+          Proje odaklı, temiz UI seven bir geliştiriciyim.
+        </h1>
+        <p class="subtitle">
+          Web & yazılım projeleri geliştiriyorum. Burada seçili işlerimi, kullandığım teknolojileri ve
+          bana ulaşabileceğin bağlantıları bulabilirsin.
         </p>
 
-        <p class="note">
-          Linkin üzerine gel: <a href="#selectors">hover örneği</a>
-        </p>
-
-        <button class="btn" type="button">Buton</button>
-      </article>
-
-      <aside class="sidebar card" id="layout">
-        <h2>2) Sidebar</h2>
-        <p>
-          Bu alan tipik web sayfası düzenini (header/nav/content/sidebar/footer)
-          göstermeye yarar.
-        </p>
-
-        <div class="callout">
-          <strong>İpucu:</strong> box-sizing: border-box kullanmak hesaplamaları kolaylaştırır.
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Projeleri Gör</a>
+          <a class="btn ghost" href="https://github.com/USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
-      </aside>
 
-      <section class="card" id="boxmodel">
-        <h2>3) Box Model Demo</h2>
-        <div class="box-demo">
-          <div class="box">
-            <p>
-              Bu kutu; <em>content</em>, <em>padding</em>, <em>border</em>, <em>margin</em>
-              bileşenlerini görselleştirir.
-            </p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Mini Proje</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Büyük Proje</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Staj</div>
           </div>
         </div>
-      </section>
-
-      <section class="card" id="responsive">
-        <h2>4) Responsive (Media Query)</h2>
-        <p>
-          Ekran daraldığında yerleşim tek sütuna düşecek ve menü daha kompakt görünecek.
-          Tarayıcı genişliğini değiştirip gözlemleyin.
-        </p>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <small>© YMH354 Web Design and Programming</small>
       </div>
+
+      <div class="hero-right">
+        <div class="profile-card">
+          <div class="avatar" aria-hidden="true"></div>
+          <h2>Furkan Canım</h2>
+          <p class="muted">Ankara • Yazılım Mühendisliği</p>
+
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Java</span>
+          </div>
+
+          <a class="btn primary full" href="#contact">Birlikte Çalışalım</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="container">
+    <section class="section" id="projects">
+      <div class="section-head">
+        <h2>Projeler</h2>
+        <p class="muted">Öne çıkan birkaç iş (kısa, anlaşılır, işe alım odaklı).</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <h3>KYK Becayiş Uygulaması</h3>
+            <span class="tag">Mobil</span>
+          </div>
+          <p class="muted">
+            Harita ve kullanıcı girişi içeren sade bir prototip. Kotlin/XML ile UI geliştirme.
+          </p>
+          <div class="card-actions">
+            <a class="link" href="https://github.com/USERNAME/REPO" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo/Video</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>Ders Ödev Yönetim Sistemi</h3>
+            <span class="tag">Web</span>
+          </div>
+          <p class="muted">
+            React + Spring Boot + PostgreSQL. Davet kodu ile grup, ödev/proje/sunum akışı.
+          </p>
+          <div class="card-actions">
+            <a class="link" href="https://github.com/USERNAME/REPO" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Canlı</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>Dashboard (Excel Import/Export)</h3>
+            <span class="tag">Front-end</span>
+          </div>
+          <p class="muted">
+            Listeleme, filtreleme ve Excel dışa/içe aktarma özellikleri olan Dashboard bileşeni.
+          </p>
+          <div class="card-actions">
+            <a class="link" href="https://github.com/USERNAME/REPO" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head">
+        <h2>Yetenekler</h2>
+        <p class="muted">Kullandığım teknoloji ve araçlar.</p>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <h3>Frontend</h3>
+          <ul>
+            <li>React, HTML, CSS</li>
+            <li>State yönetimi, component tasarımı</li>
+            <li>Responsive tasarım</li>
+          </ul>
+        </div>
+        <div class="skill">
+          <h3>Backend</h3>
+          <ul>
+            <li>Spring Boot, REST API</li>
+            <li>JWT/Authentication temelleri</li>
+            <li>DTO, katmanlı mimari</li>
+          </ul>
+        </div>
+        <div class="skill">
+          <h3>Veritabanı & Araçlar</h3>
+          <ul>
+            <li>PostgreSQL</li>
+            <li>Git/GitHub</li>
+            <li>Docker (temel)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-head">
+        <h2>Hakkımda</h2>
+        <p class="muted">2-3 cümleyle net.</p>
+      </div>
+
+      <div class="about card">
+        <p>
+          Yazılım Mühendisliği öğrencisiyim. Ürün odaklı düşünmeyi, temiz arayüzleri ve
+          anlaşılır kod yazmayı seviyorum. React ve Spring Boot ile projeler geliştiriyorum.
+        </p>
+        <p class="muted">
+          Şu an özellikle: portfolyo + proje sunumları + staj başvuruları üzerine odaklanıyorum.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head">
+        <h2>İletişim</h2>
+        <p class="muted">En hızlı dönüş için e-posta.</p>
+      </div>
+
+      <div class="contact card">
+        <div class="contact-row">
+          <div>
+            <div class="contact-label">E-posta</div>
+            <a class="link" href="mailto:furkan@example.com">furkan@example.com</a>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <a class="link" href="https://github.com/USERNAME" target="_blank" rel="noreferrer">github.com/USERNAME</a>
+          </div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <a class="link" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noreferrer">linkedin.com/in/USERNAME</a>
+          </div>
+        </div>
+
+        <div class="note muted">
+          İpucu: Buradaki USERNAME/REPO ve e-posta alanlarını kendine göre değiştir.
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">© <span id="year"></span> Furkan • GitHub Pages</p>
     </footer>
-  </body>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
