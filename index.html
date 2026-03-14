@@ -28,8 +28,7 @@
           gömülü sistemler ve veri bilimi alanlarına kendimi geliştiriyorum.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Projeler</a>
-          <a class="btn ghost" href="#contact">İletişime Geç</a>
+
         </div>
       </div>
       <div class="hero-photo">
@@ -42,7 +41,7 @@
     <section class="section" id="projects">
       <div class="section-head">
         <h2>Projeler</h2>
-        <p class="muted">Yer aldığım biten ve devam eden projeler.</p>
+
       </div>
 
       <div class="grid">
@@ -52,11 +51,12 @@
             <span class="tag"></span>
           </div>
           <p class="muted">
-            KYK öğrencilerin becayiş ile yurt değiştirme süreçlerini kolaylaştıran becayiş bulma uygulaması
+            KYK öğrencilerin becayiş ile yurt değiştirme süreçlerini kolaylaştıran becayiş bulma uygulaması.
+
+          
           </p>
           <div class="card-actions">
-
-
+            <p class="project-note muted">Proje şu an aktif değil, erişime açık değil.</p>
           </div>
         </article>
 
@@ -69,8 +69,7 @@
             Üniversite öğrencileri için sunum, ödev, proje dağıtım ve kontrol süreçlerini kolaylaştıran Web Uygulaması
           </p>
           <div class="card-actions">
-            <a class="link" href="" target="_blank" rel="noreferrer">!</a>
-
+            <p class="project-note muted">Proje şu an aktif değil, erişime açık değil.</p>
           </div>
         </article>
 
@@ -113,7 +112,7 @@
             TUBITAK 2209-A projesi kapsamında geliştirdiğimiz görüntü işleme ile kiraz sınıflandırma ve ayıklama projesi.
           </p>
           <div class="card-actions">
-            
+            <p class="project-note muted">Proje şu an aktif değil, erişime açık değil.</p>
           </div>
         </article>
         
@@ -127,7 +126,7 @@
             Bilet bulunamayan otobüs yolculukları için otomatik olarak koltuk numarasız yolculuk planlayan algoritmaya sahip otobüs bileti web uygulaması.
           </p>
           <div class="card-actions">
-            
+            <p class="project-note muted">Proje şu an aktif değil, erişime açık değil.</p>
           </div>
         </article>
       </div>
@@ -136,7 +135,7 @@
     <section class="section" id="skills">
       <div class="section-head">
         <h2>Yetenekler</h2>
-        <p class="muted">Kullandığım teknoloji ve araçlar.</p>
+
       </div>
 
       <div class="skills">
@@ -186,7 +185,7 @@
     <section class="section" id="contact">
       <div class="section-head">
         <h2>İletişim</h2>
-        <p class="muted">Hızlı dönüş için e-posta.</p>
+
       </div>
 
       <div class="contact card">
@@ -218,6 +217,19 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.querySelector(".nav");
+
+    const handleNavState = () => {
+      if (window.scrollY > 40) {
+        nav.classList.add("is-scrolled");
+      } else {
+        nav.classList.remove("is-scrolled");
+      }
+    };
+
+    handleNavState();
+    window.addEventListener("scroll", handleNavState);
   </script>
 </body>
 </html>
