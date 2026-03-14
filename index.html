@@ -9,16 +9,16 @@
 </head>
 
 <body>
-  <header class="header">
-    <nav class="nav">
-      <div class="nav-links">
-        <a href="#projects">Projeler</a>
-        <a href="#skills">Yetenekler</a>
-        <a href="#about">Hakkımda</a>
-        <a href="#contact">İletişim</a>
-      </div>
-    </nav>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#projects">Projeler</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#contact">İletişim</a>
+    </div>
+  </nav>
 
+  <header class="header">
     <section class="hero" id="top">
       <div class="hero-content">
         <p class="hero-kicker">Yazılım Mühendisliği Öğrencisi</p>
@@ -48,7 +48,7 @@
         <article class="card">
           <div class="card-top">
             <h3>BecayişBul</h3>
-            <span class="tag"></span>
+
           </div>
           <p class="muted">
             KYK öğrencilerin becayiş ile yurt değiştirme süreçlerini kolaylaştıran becayiş bulma uygulaması.
@@ -63,7 +63,7 @@
         <article class="card">
           <div class="card-top">
             <h3>Proje Yönetim Sistemi</h3>
-            <span class="tag">Web</span>
+
           </div>
           <p class="muted">
             Üniversite öğrencileri için sunum, ödev, proje dağıtım ve kontrol süreçlerini kolaylaştıran Web Uygulaması
@@ -76,7 +76,7 @@
         <article class="card">
           <div class="card-top">
             <h3>GSB Rapor Sistemi</h3>
-            <span class="tag"></span>
+
           </div>
           <p class="muted">
             T.C. Gençlik ve Spor Bakanlığında kullanılmak üzere jira alternatifi topic oluşturma listeleme, filtreleme ve Excel dışa/içe aktarma özellikleri olan 
@@ -91,7 +91,7 @@
         <article class="card">
           <div class="card-top">
             <h3>Vibzy</h3>
-            <span class="tag"></span>
+
 
           </div>
           <p class="muted">
@@ -106,7 +106,7 @@
         <article class="card">
           <div class="card-top">
             <h3>Görüntü İşleme ile Kiraz Sınıflandırma Projesi</h3>
-            <span class="tag"></span>
+
           </div>
           <p class="muted">
             TUBITAK 2209-A projesi kapsamında geliştirdiğimiz görüntü işleme ile kiraz sınıflandırma ve ayıklama projesi.
@@ -120,7 +120,7 @@
         <article class="card">
           <div class="card-top">
             <h3>NoSeat Ticket</h3>
-            <span class="tag"></span>
+
           </div>
           <p class="muted">
             Bilet bulunamayan otobüs yolculukları için otomatik olarak koltuk numarasız yolculuk planlayan algoritmaya sahip otobüs bileti web uygulaması.
@@ -169,7 +169,7 @@
     <section class="section" id="about">
       <div class="section-head">
         <h2>Hakkımda</h2>
-        <p class="muted">--</p>
+
       </div>
 
       <div class="about card">
@@ -177,7 +177,7 @@
           Yazılım Mühendisliği öğrencisiyim. Görüntü işleme veri bilimi ve gömülü sistemler alanlarında kendimi geliştiriyorum.  
         </p>
         <p class="muted">
-          Şu an özellikle: Görüntü İşlem, Gömülü Sistemler, Veri Bilimi üzerine çalışıyorum.
+          Şu an özellikle: Görüntü İşleme, Gömülü Sistemler, Veri Bilimi üzerine çalışıyorum.
         </p>
       </div>
     </section>
@@ -219,6 +219,10 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const nav = document.querySelector(".nav");
+    const navLinks = [...document.querySelectorAll(".nav-links a")];
+    const sections = navLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
 
     const handleNavState = () => {
       if (window.scrollY > 40) {
@@ -226,6 +230,21 @@
       } else {
         nav.classList.remove("is-scrolled");
       }
+
+      const navHeight = nav.offsetHeight;
+      let currentSection = null;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - navHeight - 24;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const isActive = currentSection && link.getAttribute("href") === `#${currentSection.id}`;
+        link.classList.toggle("is-active", isActive);
+      });
     };
 
     handleNavState();
